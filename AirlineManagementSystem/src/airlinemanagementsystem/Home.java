@@ -50,6 +50,7 @@ public class Home extends JFrame implements ActionListener{
         menubar.add(ticket);
         
         JMenuItem boardingPass = new JMenuItem("Boarding Pass");
+        boardingPass.addActionListerner(this);
         ticket.add(boardingPass);
         
         
