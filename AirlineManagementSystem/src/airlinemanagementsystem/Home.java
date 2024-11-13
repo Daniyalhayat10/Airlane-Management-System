@@ -72,8 +72,7 @@ public class Home extends JFrame implements ActionListener{
             new Cancel();
         } else if (text.equals("Boarding Pass")) {
             new BoardingPass();
-        }
-        
+        }  
     }
     
     public static void main(String[] args) {
