@@ -1,8 +1,8 @@
 package airlinemanagementsystem;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class Home extends JFrame implements ActionListener{
     
@@ -50,8 +50,8 @@ public class Home extends JFrame implements ActionListener{
         menubar.add(ticket);
         
         JMenuItem boardingPass = new JMenuItem("Boarding Pass");
-        ticket.add(boardingPass);
-        
+        boardingPass.addActionListener(this);
+        ticket.add(boardingPass);        
         
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
@@ -70,7 +70,9 @@ public class Home extends JFrame implements ActionListener{
             new JourneyDetails();
         } else if (text.equals("Cancel Ticket")) {
             new Cancel();
-        }
+        } else if (text.equals("Boarding Pass")) {
+            new BoardingPass();
+        }  
     }
     
     public static void main(String[] args) {
