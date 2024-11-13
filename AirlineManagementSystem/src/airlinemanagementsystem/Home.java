@@ -1,8 +1,8 @@
 package airlinemanagementsystem;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class Home extends JFrame implements ActionListener{
     
@@ -11,12 +11,12 @@ public class Home extends JFrame implements ActionListener{
         
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("airlinemanagementsystem/icons/front.jpg"));
         JLabel image = new JLabel(i1);
-        image.setBounds(0, 0, 1600, 800);
+        image.setBounds(0, 0, 1500, 700);
         add(image);
         
         JLabel heading = new JLabel("AIR INDIA WELCOMES YOU");
-        heading.setBounds(500, 40, 1000, 40);
-        heading.setForeground(Color.BLUE);
+        heading.setBounds(400, 40, 1000, 40);
+        heading.setForeground(Color.BLACK);
         heading.setFont(new Font("Tahoma", Font.PLAIN, 36));
         image.add(heading);
         
@@ -50,6 +50,7 @@ public class Home extends JFrame implements ActionListener{
         menubar.add(ticket);
         
         JMenuItem boardingPass = new JMenuItem("Boarding Pass");
+        boardingPass.addActionListener(this);
         ticket.add(boardingPass);
         
         
@@ -70,6 +71,8 @@ public class Home extends JFrame implements ActionListener{
             new JourneyDetails();
         } else if (text.equals("Cancel Ticket")) {
             new Cancel();
+        } else if (text.equals("Boarding Pass")) {
+            new BoardingPass();
         }
     }
     
